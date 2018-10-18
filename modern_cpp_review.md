@@ -18,7 +18,13 @@ Here is an example shows how to use .def file to export functions and call them 
 [How to use .def](https://blog.csdn.net/ithzhang/article/details/8208153)
 
 ## 2. Thread Syncronisation
+Both  windows API and STL(c++11(vs2012) or later) can enable multithreading in c++ on windows.
 
+This series introduced what is multithread programming and how to achieve it with the windows API.
+[Programming Thinking - Multiprocessing and Multithreading](https://blog.csdn.net/luoweifu/article/details/46595285)
+
+Similarily, there is another series talking about the same topic using the STL.
+[C++11 Multithreading](https://thispointer.com/c-11-multithreading-part-1-three-different-ways-to-create-threads/)
 
 ## 3. Smart Pointer
 
