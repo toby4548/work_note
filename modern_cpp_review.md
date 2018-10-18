@@ -14,7 +14,11 @@ By using .def file, it's possible to
 Here is an example shows how to create and link a .dll in visual studio from Microsoft.
 [Walkthrough: Create and use your own Dynamic Link Library (C++)](https://docs.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=vs-2017)
 
+Here is an example shows how to use .def file to export functions and call them by ordinal.
+[How to use .def](https://blog.csdn.net/ithzhang/article/details/8208153)
+
 ## 2. Thread Syncronisation
+
 
 ## 3. Smart Pointer
 
