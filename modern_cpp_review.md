@@ -33,3 +33,6 @@ Similarily, there is another series talking about the same topic using the STL.
 ## 3. Smart Pointer
 
 ## 4. Callable Targets
+
+## 5. Class
+
