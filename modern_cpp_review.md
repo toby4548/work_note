@@ -36,3 +36,13 @@ Similarily, there is another series talking about the same topic using the STL.
 
 ## 5. Class
 
+### 5.1 Interface
+There is no official interface in c++, but the idea can be implemented with pure virtual function.
+
+Here is an example.
+
+[Interface implementation in c++](https://scriptjerks.blogspot.com/2012/06/c.html)
+
+The class IShape is an interface.
+
+
