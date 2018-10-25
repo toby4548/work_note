@@ -34,7 +34,7 @@ Similarily, there is another series talking about the same topic using the STL.
 
 ## 4. Callable Targets
 
-## 5. Class
+## 5. Object Oriented Programming
 
 ### 5.1 Interface
 There is no official interface in c++, but the idea can be implemented with pure virtual function.
@@ -44,5 +44,19 @@ Here is an example.
 [Interface implementation in c++](https://scriptjerks.blogspot.com/2012/06/c.html)
 
 The class IShape is an interface.
+
+### 5.2 Patterns
+
+#### Factory
+
+The interface can be used to implement the factory design pattern
+
+[Factory pattern](https://skyyen999.gitbooks.io/-study-design-pattern-in-java/content/factory.html)
+
+#### Proxy
+
+
+
+
 
 
