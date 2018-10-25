@@ -55,6 +55,11 @@ The interface can be used to implement the factory design pattern
 
 #### Proxy
 
+### 6. Visual C++ Project Build Tricks
+
+1. User defined macro can be saved as Project Property File. You can load them with Property Manager(VIEW -> Other Windows -> Property Manager)
+2. The directories in Solution Explorer are just virtual directory.
+
 
 
 
