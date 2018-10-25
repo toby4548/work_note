@@ -3,6 +3,28 @@
 ## 1. DLL
 .dll stands for dynamically link library. In contrasts to the statically link library(.lib), which is linked during the compile time, the .dll is linked dring the runtime. This means that the .dll is much more flexible since it can be updated without recompile the entire executable. 
 
+**DLL Main**
+
+An optional entry point of the .dll. e.g.
+
+```cpp
+BOOL WINAPI DllMain(
+  _In_ HINSTANCE hinstDLL,
+  _In_ DWORD     fdwReason,
+  _In_ LPVOID    lpvReserved
+);
+```
+
+1. THe histDLL is a handle to the DLL module.
+2. The fdwReason indicates why the entry point function is being called.
+3. The lpvReseved will return the status when the process is attached/detached.
+
+A DLL can optionally specify an entry-point function. If present, the system calls the entry-point function whenever a process or thread loads or unloads the DLL. It can be used to perform simple initialization and cleanup tasks. For example, it can set up thread local storage when a new thread is created, and clean it up when the thread is terminated.
+
+Only one thread at a time can call the entry-point function.
+
+**Export**
+
 There are two ways to export the functions from the .dll.
 1. Decorate the functions with __dclspec(dllexport) keyword.
 2. Use a .def file.
