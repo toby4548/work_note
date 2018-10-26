@@ -81,6 +81,9 @@ The interface can be used to implement the factory design pattern
 
 1. User defined macro can be saved as Project Property File. You can load them with Property Manager(VIEW -> Other Windows -> Property Manager)
 2. The directories in Solution Explorer are just virtual directory.
+3. For Unicode progreamming model, use **wmain** instead of **main**.
+4. Change startup project: right click on project ->Set as startup project.
+5. The stdafx.h is used for precompiled header.
 
 
 
