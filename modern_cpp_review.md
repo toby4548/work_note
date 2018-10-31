@@ -69,6 +69,9 @@ The class IShape is an interface.
 
 ### 5.2 Patterns
 
+There is a very comprehensive article about the implementation in c++.
+[Design pattern in c++](https://segmentfault.com/a/1190000010706695)
+
 #### Factory
 
 The interface can be used to implement the factory design pattern
@@ -77,7 +80,25 @@ The interface can be used to implement the factory design pattern
 
 #### Proxy
 
-### 6. Visual C++ Project Build Tricks
+#### Singleton
+
+## 6. Random C++ Note
+
+** Delete Function:（source: cppreference.com）** 
+If, instead of a function body, the special syntax = delete ; is used, the function is defined as deleted. Any use of a deleted function is ill-formed (the program will not compile). This includes calls, both explicit (with a function call operator) and implicit (a call to deleted overloaded operator, special member function, allocation function etc), constructing a pointer or pointer-to-member to a deleted function, and even the use of a deleted function in an unevaluated expression. However, implicit ODR-use of a non-pure virtual member function that happens to be deleted is allowed.
+
+If the function is overloaded, overload resolution takes place first, and the program is only ill-formed if the deleted function was selected.
+
+```cpp
+struct sometype
+{
+    void* operator new(std::size_t) = delete;
+    void* operator new[](std::size_t) = delete;
+};
+sometype* p = new sometype; // error: attempts to call deleted sometype::operator new
+```
+
+## 7. Visual C++ Project Build Tricks
 
 1. User defined macro can be saved as Project Property File. You can load them with Property Manager(VIEW -> Other Windows -> Property Manager)
 2. The directories in Solution Explorer are just virtual directory.
