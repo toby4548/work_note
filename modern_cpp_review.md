@@ -105,7 +105,7 @@ sometype* p = new sometype; // error: attempts to call deleted sometype::operato
 3. For Unicode progreamming model, use **wmain** instead of **main**.
 4. Change startup project: right click on project ->Set as startup project.
 5. The stdafx.h is used for precompiled header.
-
+6. To use highly accurate timestamp, check out [QPC](https://docs.microsoft.com/en-us/windows/desktop/SysInfo/acquiring-high-resolution-time-stamps)
 
 
 
