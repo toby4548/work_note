@@ -84,7 +84,7 @@ The interface can be used to implement the factory design pattern
 
 ## 6. Random C++ Note
 
-** Delete Function:（source: cppreference.com）** 
+**-Delete Function:（source: cppreference.com** 
 If, instead of a function body, the special syntax = delete ; is used, the function is defined as deleted. Any use of a deleted function is ill-formed (the program will not compile). This includes calls, both explicit (with a function call operator) and implicit (a call to deleted overloaded operator, special member function, allocation function etc), constructing a pointer or pointer-to-member to a deleted function, and even the use of a deleted function in an unevaluated expression. However, implicit ODR-use of a non-pure virtual member function that happens to be deleted is allowed.
 
 If the function is overloaded, overload resolution takes place first, and the program is only ill-formed if the deleted function was selected.
@@ -97,6 +97,10 @@ struct sometype
 };
 sometype* p = new sometype; // error: attempts to call deleted sometype::operator new
 ```
+
+**-std::vector**
+
+1, clear() member function will call all the distructors in the container. It's a quick way to release the resource.  
 
 ## 7. Visual C++ Project Build Tricks
 
