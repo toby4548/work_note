@@ -97,6 +97,53 @@ struct sometype
 };
 sometype* p = new sometype; // error: attempts to call deleted sometype::operator new
 ```
+**Copy Slicaing**
+
+The copy assignment from a base class to a derived class will only copy the base part from derived object.
+
+```cpp
+class Base
+{
+public:
+  Base() { static uint32_t id = 0; mBaseId = id++; }
+  virtual ~Base() = default;
+  virtual std::string SomeMethod() { return std::string("BASE ").append(std::to_string(mBaseId)); }
+  uint32_t mBaseId;
+};
+
+class Derived : public Base
+{
+public:
+  Derived() { static uint32_t id = 0; mDerivedId = id++; }
+  std::string SomeMethod() override { return std::string("DERIVED ").append(std::to_string(mDerivedId)); }
+  uint32_t mDerivedId;
+};
+
+Derived derived;
+Derived derived2;
+Base& base = derived2;
+base = derived;
+
+std::cout << base.SomeMethod() << std::endl; // output: DERIVED 1
+std::cout << derived2.SomeMethod() << std::endl; // output: DERIVED 1
+std::cout << derived2.mBaseId << " " << derived2.mDerivedId << std::endl; // output: 0 1 CAUTION: OBJECT SCLICING!
+```
+
+Guidelines:
+* Access polymorphic objects through pointers and references and don't create containers of base objects.
+i.e.
+```cpp
+
+Derived derived;
+std::vector<Base> vec;
+vec.push_back(derived); // will create a cliced copy of derived
+
+```
+* Supress coping in base class
+i.e.
+```cpp
+Base(const Base&)=delete;
+```
 
 **-std::vector**
 
